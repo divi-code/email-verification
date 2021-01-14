@@ -1,12 +1,4 @@
-# [Parity](https://ethcore.io/parity.html) e-mail verification
-
-[![Join the chat at https://gitter.im/ethcore/parity][gitter-image]][gitter-url] [![GPLv3][license-image]][license-url]
-
-[gitter-image]: https://badges.gitter.im/Join%20Chat.svg
-[gitter-url]: https://gitter.im/ethcore/parity
-[license-image]: https://img.shields.io/badge/license-GPL%20v3-green.svg
-[license-url]: https://www.gnu.org/licenses/gpl-3.0.en.html
-
+E-mail verification
 The following process **ties an account to an email address**:
 
 ```
@@ -34,17 +26,6 @@ token=sha(code)  ^           e-mail with code         |
 7. client posts response (`confirm(token)`)
 
 Now, anyone can easily **check if an account is verified by calling `certified(address)`** on the contract.
-
-[latest deployed `EmailVerification.sol`](https://github.com/ethcore/contracts/blob/d86490e/EmailVerification.sol)
-
-## Installation
-
-```shell
-git clone https://github.com/ethcore/email-verification.git
-cd email-verification
-npm install --production
-```
-
 ## Usage
 
 **The account calling `puzzle` has to be the `owner` of the contract.**
@@ -57,9 +38,3 @@ npm install --production
 Deploy to production using process managers like [forever](https://github.com/foreverjs/forever#readme).
 
 ---
-
-To run on both testnet and mainnet, just create two config files. Make sure to use
-
-- separate Parity processes listening on different ports (`parity.host`)
-- separate `db` files
-- separate ports to listen on (`http.port`)
